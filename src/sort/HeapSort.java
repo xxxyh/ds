@@ -6,6 +6,7 @@ package sort;
  * @create 2019-07-22 14:45
  */
 public class HeapSort extends BaseSort{
+
     @Override
     public void sort(int[] nums) {
         int length = nums.length;
@@ -23,18 +24,21 @@ public class HeapSort extends BaseSort{
         }
     }
 
+    /**
+     * 数组入堆
+     */
     private void heapify(int[] nums, int i, int length){
         int right = 2 * i + 1;
         int left = 2 * i + 2;
-        int largert = i;
-        if (left <length && nums[left] > nums[largert]){
-            largert = left;
+        int largest = i;
+        if (left <length && nums[left] > nums[largest]){
+            largest = left;
         }
-        if (right <length && nums[right] > nums[largert]){
-            largert = right;
+        if (right <length && nums[right] > nums[largest]){
+            largest = right;
         }
-        if (largert != i) {
-            swap(nums,largert,i);
+        if (largest != i) {
+            swap(nums,largest,i);
         }
     }
 
