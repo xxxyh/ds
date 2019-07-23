@@ -10,7 +10,7 @@ public abstract class BaseSort {
     public abstract void sort(int[] nums);
 
     public void doSort(){
-        int[] nums = new int[]{9,1,2,7,1,3,2,1};
+        int[] nums = new int[]{9,1,2,7,1,3,2,1,10,11,12,99,123,23};
         init();
         print(nums);
         this.sort(nums);

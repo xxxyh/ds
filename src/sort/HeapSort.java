@@ -15,11 +15,12 @@ public class HeapSort extends BaseSort{
             swap(nums, 0, i);
             length --;
             heapify(nums, 0 , length);
+
         }
     }
 
     private void buildMaxHeap( int[] nums, int length){
-        for (int i = (int) Math.floor(length/2); i >= 0 ; i--){
+        for (int i =  length/2; i >= 0 ; i--){
             heapify(nums,i,length);
         }
     }
@@ -28,8 +29,8 @@ public class HeapSort extends BaseSort{
      * 数组入堆
      */
     private void heapify(int[] nums, int i, int length){
-        int right = 2 * i + 1;
-        int left = 2 * i + 2;
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
         int largest = i;
         if (left <length && nums[left] > nums[largest]){
             largest = left;
@@ -39,6 +40,7 @@ public class HeapSort extends BaseSort{
         }
         if (largest != i) {
             swap(nums,largest,i);
+            heapify(nums, largest ,length);
         }
     }
 
