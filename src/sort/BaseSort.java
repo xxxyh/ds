@@ -1,5 +1,7 @@
 package sort;
 
+import java.util.Random;
+
 public abstract class BaseSort {
 
     public void init(){
@@ -10,7 +12,7 @@ public abstract class BaseSort {
     public abstract void sort(int[] nums);
 
     public void doSort(){
-        int[] nums = new int[]{9,1,2,7,1,3,2,1,10,11,12,99,123,23};
+        int[] nums = generateIntArr();
         init();
         print(nums);
         this.sort(nums);
@@ -23,10 +25,22 @@ public abstract class BaseSort {
         nums[j] = temp;
     }
 
-    public static void print(int[] nums){
+    private static void print(int[] nums){
         for(int num : nums){
             System.out.print(num+" ");
         }
         System.out.println();
+    }
+
+    private int[] generateIntArr(){
+        Random random = new Random();
+        //产生一个10-30的随机数
+        int length = random.nextInt(20) + 10;
+
+        int[] nums = new int[length];
+        for(int i = 0;i < length;i++){
+            nums[i] = random.nextInt(30);
+        }
+        return nums;
     }
 }
