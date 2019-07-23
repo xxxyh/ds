@@ -18,7 +18,7 @@ public class MinHeapSort extends BaseSort{
     }
 
     private void buildMinHeap(int[] nums, int size){
-        for(int i = size / 2 - 1; i >= 0;i--){
+        for(int i = size / 2; i >= 0;i--){
             heapify(nums, i, size);
         }
     }
