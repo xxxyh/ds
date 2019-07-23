@@ -5,7 +5,7 @@ package sort;
  * @author 方珂
  * @create 2019-07-22 14:45
  */
-public class HeapSort extends BaseSort{
+public class MaxHeapSort extends BaseSort{
 
     @Override
     public void sort(int[] nums) {
@@ -45,6 +45,6 @@ public class HeapSort extends BaseSort{
     }
 
     public static void main(String[] args) {
-        new HeapSort().doSort();
+        new MaxHeapSort().doSort();
     }
 }
