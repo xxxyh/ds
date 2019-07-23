@@ -1,9 +1,6 @@
 package sort;
 
-/**
- * @Author: xyh
- * @Date: 2019/7/23 15:26
- */
+
 public class ShellSort extends BaseSort{
     @Override
     public void sort(int[] nums){

@@ -9,21 +9,11 @@ public class SimpleSort extends BaseSort {
         while(i < length){
             int temp = nums[i];
             int k = i -1;
-            boolean flag = true;
-            while(k >= 0){
-                if(nums[k] > temp){
-                    nums[k+1] = nums[k];
-                }else{
-                    nums[k+1] = temp;
-                    flag = false;
-                    break;
-                }
+            while(k >= 0 && nums[k] > temp){
+                nums[k + 1] = nums[k];
                 k--;
             }
-            //如果一直没插入temp,说明temp比nums[0]还小
-            if(flag){
-                nums[0] = temp;
-            }
+            nums[k + 1] = temp;
             i++;
         }
     }

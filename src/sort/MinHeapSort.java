@@ -1,9 +1,5 @@
 package sort;
 
-/**
- * @Author: xyh
- * @Date: 2019/7/23 9:04
- */
 public class MinHeapSort extends BaseSort{
 
     @Override
