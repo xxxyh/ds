@@ -30,9 +30,7 @@ public class LinkedList{
     }
 
     public int get(int index){
-        if(index >= size){
-            throw new RuntimeException("ArrayIndexOutOfBound "+"size:"+size+" index"+index);
-        }
+        indexCheck(index);
         int k = 0;
         Node node = head.next;
         while(k < index){
@@ -40,6 +38,29 @@ public class LinkedList{
             k++;
         }
         return node.data;
+    }
+
+    public int remove(int index){
+        indexCheck(index);
+        int k = 0;
+        Node i = head;
+        Node j = head.next;
+        while(k < index){
+            i = i.next;
+            j = j.next;
+            k++;
+        }
+
+        i.next = j.next;
+        size--;
+        return j.data;
+    }
+
+
+    private void indexCheck(int index){
+        if(index >= size){
+            throw new RuntimeException("ArrayIndexOutOfBound "+"size:"+size+" index"+index);
+        }
     }
 
     public void print(){
@@ -61,10 +82,15 @@ public class LinkedList{
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
         linkedList.createList();
+        System.out.println("size:"+linkedList.size());
         linkedList.add(10);
         linkedList.add(7);
         linkedList.print();
         System.out.println(linkedList.get(3));
+        System.out.println("size:"+linkedList.size());
+        System.out.println(linkedList.remove(5));
+        linkedList.print();
+        System.out.println("size:"+linkedList.size());
     }
 
     class Node{
