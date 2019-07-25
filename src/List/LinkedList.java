@@ -80,17 +80,17 @@ public class LinkedList{
     }
 
     public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList();
-        linkedList.createList();
-        System.out.println("size:"+linkedList.size());
-        linkedList.add(10);
-        linkedList.add(7);
-        linkedList.print();
-        System.out.println(linkedList.get(3));
-        System.out.println("size:"+linkedList.size());
-        System.out.println(linkedList.remove(5));
-        linkedList.print();
-        System.out.println("size:"+linkedList.size());
+        LinkedList list = new LinkedList();
+        list.createList();
+        System.out.println("size:"+list.size());
+        list.add(10);
+        list.add(7);
+        list.print();
+        System.out.println(list.get(3));
+        System.out.println("size:"+list.size());
+        System.out.println(list.remove(5));
+        list.print();
+        System.out.println("size:"+list.size());
     }
 
     class Node{
