@@ -19,6 +19,13 @@ public abstract class BaseSearch {
         System.out.println(search(nums, data));
     }
 
+    public void doSearch(int[] nums, int data){
+        init();
+        print(nums);
+        System.out.println("查找data:"+data);
+        System.out.println(search(nums, data));
+    }
+
     private static void print(int[] nums){
         for(int num : nums){
             System.out.print(num+" ");
