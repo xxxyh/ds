@@ -1,11 +1,12 @@
 package leetcode;
 
 
-import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Queue;
+import java.util.Set;
 
 public class Solution347 {
     public int[] topKFrequent(int[] nums, int k) {
@@ -13,14 +14,20 @@ public class Solution347 {
         for(int num : nums){
             map.put(num, map.getOrDefault(num, 0) + 1);
         }
-        Queue<Integer> queue = new PriorityQueue(Comparator.comparingInt(map::get));
+        Queue<Integer> queue = new PriorityQueue((o1, o2) -> map.get(o2) - map.get(o1));
         for(int num : nums){
             queue.offer(num);
         }
         int[] res = new int[k];
         int i = 0;
+        Set<Integer> used = new HashSet<>();
         while(i < k && !queue.isEmpty()){
-            res[i++] = queue.poll();
+            int c = queue.poll();
+            if(used.contains(c)){
+                continue;
+            }
+            res[i++] = c;
+            used.add(c);
         }
         return res;
     }

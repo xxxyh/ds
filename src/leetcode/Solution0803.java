@@ -1,4 +1,4 @@
-package leetcode.interview;
+package leetcode;
 
 public class Solution0803 {
     //每日一题

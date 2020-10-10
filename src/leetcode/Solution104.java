@@ -9,11 +9,4 @@ public class Solution104 {
         int right = maxDepth(root.right);
         return Math.max(left, right) + 1;
     }
-
-    class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode(int x) { val = x; }
-    }
 }

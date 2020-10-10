@@ -14,11 +14,4 @@ public class Solution101 {
         }
         return left.val == right.val && ismirror(left.left, right.right) && ismirror(left.right, right.left);
     }
-
-    class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode(int x) { val = x; }
-    }
 }

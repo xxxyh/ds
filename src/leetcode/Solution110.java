@@ -22,11 +22,4 @@ public class Solution110 {
         map.put(node, height);
         return height;
     }
-
-    class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode(int x) { val = x; }
-    }
 }
