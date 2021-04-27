@@ -40,9 +40,3 @@ public class Solution002 {
         System.out.println(addTwoNumbers(null, null));
     }
 }
-
-class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int x) { val = x; }
-}

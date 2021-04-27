@@ -1,11 +1,6 @@
 package leetcode;
 
 public class Solution691 {
-    public class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int x) { val = x; }
-  }
     public static ListNode getKthFromEnd(ListNode head, int k) {
         if(head == null || k <= 0){
             return null;

@@ -1,20 +1,20 @@
 package leetcode;
 
 public class Solution303 {
+    class NumArray {
 
-    private int[] presum;
+        private int[] arr;
 
-    private Solution303(int[] nums){
-        int N = nums.length;
-        presum = new int[N + 1];
+        public NumArray(int[] nums) {
+            arr = new int[nums.length + 1];
+            for(int i = 0;i < nums.length;i++){
+                arr[i + 1] = arr[i] + nums[i];
+            }
+        }
 
-        presum[0] = 0;
-        for(int i = 0;i < N;i++){
-            presum[i + 1] = presum[i] + nums[i];
+        public int sumRange(int i, int j) {
+            return arr[j + 1] - arr[i];
         }
     }
 
-    public int sumRange(int i, int j){
-        return presum[j + 1] - presum[i];
-    }
 }

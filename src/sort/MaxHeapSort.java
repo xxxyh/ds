@@ -1,5 +1,7 @@
 package sort;
 
+import static sort.SortUtils.swap;
+
 /**
  * 堆排序(大顶堆)
  * @author 方珂

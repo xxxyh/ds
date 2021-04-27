@@ -1,5 +1,7 @@
 package sort;
 
+import static sort.SortUtils.swap;
+
 public class SelectSort extends BaseSort{
 
     @Override

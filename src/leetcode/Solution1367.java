@@ -33,10 +33,4 @@ public class Solution1367 {
         }
         return head.val == root.val && (dfs(head.next, root.left) || dfs(head.next, root.right));
     }
-
-    class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) { val = x; }
-    }
 }
