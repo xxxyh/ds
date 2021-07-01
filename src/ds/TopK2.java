@@ -2,25 +2,27 @@ package ds;
 
 import sort.SortUtils;
 
-public class TopK {
-    public int topK(int[] nums, int k){
+public class TopK2 {
+    public static int topK(int[] nums, int k){
+        if(k > nums.length || k <= 0){
+            return -1;
+        }
         int lo = 0;
         int hi = nums.length - 1;
         k = nums.length - k;
-        while(lo <= hi){
+        while(true){
             int p = partition(nums, lo, hi);
-            if(p == k){
-                return nums[p];
-            } else if(p < k){
+            if(p < k){
                 lo = p + 1;
-            }else{
+            }else if(p > k){
                 hi = p - 1;
+            }else{
+                return nums[p];
             }
         }
-        return -1;
     }
 
-    private int partition(int[] nums, int lo, int hi){
+    public static int partition(int[] nums, int lo, int hi){
         if(lo == hi){
             return lo;
         }
@@ -43,11 +45,11 @@ public class TopK {
             }
             SortUtils.swap(nums, i, j);
         }
-        SortUtils.swap(nums, lo, j);
+        SortUtils.swap(nums, lo ,j);
         return j;
     }
 
     public static void main(String[] args) {
-        System.out.println(new TopK().topK(new int[]{1,2,3,4,5}, 5));
+        System.out.println(topK(new int[]{1,2,3,4,5}, 3));
     }
 }
